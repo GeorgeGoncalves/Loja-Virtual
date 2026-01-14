@@ -32,7 +32,6 @@ public class ClienteController {
         return ResponseEntity.ok(dtos);
     }
 
-
     // Buscar por id
     @GetMapping("/{id}")
     public ResponseEntity<ClienteDTO> getCliente(@PathVariable Long id) {
@@ -41,6 +40,7 @@ public class ClienteController {
         return ResponseEntity.ok(dto);
     }
 
+    // Criar cliente
     @PostMapping
     public ResponseEntity<ClienteDTO> createCliente(@RequestBody ClienteDTO clienteDTO) {
         Cliente cliente = modelMapper.map(clienteDTO, Cliente.class);

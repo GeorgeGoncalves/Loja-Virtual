@@ -6,8 +6,12 @@ public class ProdutoDTO {
 	private String descricao;
 	private Double preco;
 	private Integer quantidadeEstoque;
+	
+	// Construtor vazio
+	public ProdutoDTO() {
+	}
 
-	// Construtor
+	// Construtor completo
 	public ProdutoDTO(Long id, String nome, String descricao, Double preco, Integer quantidadeEstoque) {
 		this.id = id;
 		this.nome = nome;
@@ -19,6 +23,10 @@ public class ProdutoDTO {
 	// Getters e Setters
 	public Long getId() {
 		return id;
+	}
+	
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getNome() {

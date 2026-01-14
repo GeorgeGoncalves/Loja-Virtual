@@ -1,7 +1,6 @@
 package com.example.loja.service;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
@@ -22,23 +21,27 @@ public class ProdutoService {
         this.repository = repository;
     }
 
-    // Cria ou atualiza um produto
-    public Produto salvar(Produto produto) {
+    // Salvar ou atualizar produto
+    public Produto save(Produto produto) {
         return repository.save(produto);
     }
-
-    // Lista todos os produtos
-    public List<Produto> listar() {
+    
+    // Buscar todos os produtos
+    public List<Produto> findAll() {
         return repository.findAll();
     }
 
-    // Busca um produto por ID
-    public Optional<Produto> buscarPorId(Long id) {
-        return repository.findById(id);
+    // Buscar produto por ID
+    public Produto findById(Long id) {
+        return repository.findById(id).orElseThrow(() -> new RuntimeException(
+        		"Produto não encontrado com id: " + id));
     }
 
-    // Deleta um produto por ID
-    public void deletar(Long id) {
+    // Deleta produto por ID
+    public void deleteById(Long id) {
+        if (!repository.existsById(id)) {
+            throw new RuntimeException("Produto não encontrado com id: " + id);
+        }
         repository.deleteById(id);
     }
 }
