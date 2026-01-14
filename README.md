@@ -9,28 +9,26 @@ O objetivo é criar uma API REST para gerenciar clientes, produtos e pedidos, se
 ---
 
 ## ⚙️ Tecnologias utilizadas
-• 	Java 17+
-• 	Spring Boot
-• 	Spring Data JPA
-• 	H2 Database (para testes)
-• 	Maven
-• 	Postman/Insomnia (para testes de API)
+- Java 17+
+- Spring Boot
+- Spring Data JPA
+- H2 Database (para testes)
+- Maven
+- Postman/Insomnia (para testes de API)
 
 ---
 
 ## 📦 Estrutura do projeto
 
+```
 │
-
+├── dto             #
 ├── controller      # Endpoints REST (ClienteController, ProdutoController...)
-
 ├── service         # Lógica de negócio (ClienteService, ProdutoService...)
-
 ├── repository      # Interfaces JPA (ClienteRepository, ProdutoRepository...)
-
 ├── entities        # Entidades JPA (@Entity) -> Cliente, Produto, Pedido
-
 └── seed           # Valores iniciais para teste
+```
 
 ---
 
@@ -45,13 +43,21 @@ Ao iniciar a aplicação, são inseridos automaticamente:
 ## 🚀 Como executar
 
 1. 	Clone o repositório:
-```git clone https://github.com/seu-usuario/loja-virtual.git```
+```
+git clone https://github.com/seu-usuario/loja-virtual.git
+```
 2. 	Entre na pasta do projeto: 
-```cd loja-virtual```
+```
+cd loja-virtual
+```
 3. 	Execute com Maven:
-```mvn spring-boot:run```
+```
+mvn spring-boot:run
+```
 4. 	Acesse a aplicação em:
-```http://localhost:8080```
+```
+http://localhost:8080
+```
 
 ---
 
@@ -59,34 +65,73 @@ Ao iniciar a aplicação, são inseridos automaticamente:
 
 ### Clientes
 - Criar cliente
-`POST /clientes`
+```
+POST /clientes
+```
 - Exemplo de JSON:
-```{"nome": "George Silva", "email": "george.silva@email.com", "senha": "123456", "endereco": Rua das Palmeiras, 45", "cpf": "12345678900", "telefone": "31999998888"}```
+```
+{
+  "nome": "Carlos",
+  "email": "carlos@email.com",
+  "endereco": "Rua Nova, 123",
+  "cpf": "22233344455",
+  "telefone": "31966666666"
+}
+```
+
 - Listar clientes
-`GET /clientes`
+```
+GET /clientes
+```
 - Buscar cliente por ID
-`GET /clientes/{id}`
+```
+GET /clientes/{id}
+```
 - Deletar cliente
-`DELETE /clientes/{id}`
+```
+DELETE /clientes/{id}
+```
 
 ### Produtos
-- `GET /produtos`
-- `POST /produtos`
-- `GET /produtos/{id}`
+- Listar produtos
+```
+GET /produtos
+```
+- Criar produto
+```
+POST /produtos
+```
+- Buscar produto por ID
+```
+GET /produtos/{id}
+```
 
 ### Pedidos
-- `GET /pedidos`
-- `POST /pedidos`
-- `GET /pedidos/{id}`
+- Listar pedido
+```
+GET /pedidos
+```
+- Criar pedido
+```
+POST /pedidos
+```
+- Buscar pedido por ID
+```
+GET /pedidos/{id}
+```
 
 ---
 
 ## 🧪 Banco de dados H2
 
 - Console disponível em:
-```http://localhost:8080/h2-console```
+```
+http://localhost:8080/h2-console
+```
 - Configuração padrão:
-```JDBC URL: jdbc:h2:mem:loja User: sa Password:```
+```
+JDBC URL: jdbc:h2:mem:loja User: sa Password:
+```
 
 ---
 

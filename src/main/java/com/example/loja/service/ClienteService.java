@@ -10,25 +10,30 @@ import java.util.List;
 @Service
 public class ClienteService {
 
-    private final ClienteRepository repository;
+	private final ClienteRepository clienteRepository;
 
-    public ClienteService(ClienteRepository repository) {
-        this.repository = repository;
+    public ClienteService(ClienteRepository clienteRepository) {
+        this.clienteRepository = clienteRepository;
     }
 
-    public List<Cliente> listarTodos() {
-        return repository.findAll();
+    // Salvar cliente
+    public Cliente save(Cliente cliente) {
+        return clienteRepository.save(cliente);
     }
 
-    public Cliente salvar(Cliente cliente) {
-        return repository.save(cliente);
+    // Buscar todos
+    public List<Cliente> findAll() {
+        return clienteRepository.findAll();
     }
 
-    public Cliente buscarPorId(Long id) {
-        return repository.findById(id).orElse(null);
+    // Buscar por id
+    public Cliente findById(Long id) {
+        return clienteRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Cliente não encontrado com id: " + id));
     }
 
-    public void deletar(Long id) {
-        repository.deleteById(id);
+    // Deletar por id
+    public void deleteById(Long id) {
+        clienteRepository.deleteById(id);
     }
 }
