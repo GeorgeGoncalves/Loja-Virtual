@@ -18,7 +18,7 @@ O objetivo é criar uma API REST para gerenciar clientes, produtos e pedidos, se
 
 ---
 
-com.example.loja
+## 📦 Estrutura do projeto
 
 │
 
@@ -31,6 +31,14 @@ com.example.loja
 ├── entities        # Entidades JPA (@Entity) -> Cliente, Produto, Pedido
 
 └── seed           # Valores iniciais para teste
+
+---
+
+## 🌱 Dados iniciais (Seed)
+Ao iniciar a aplicação, são inseridos automaticamente:
+- 3 clientes (Joaquim, Maria, João)
+- 3 produtos (Notebook Dell, Smartphone Samsung, Monitor LG)
+- 2 pedidos de exemplo (associados a clientes e produtos)
 
 ---
 
@@ -49,16 +57,27 @@ com.example.loja
 
 ## 📦 Endpoints principais
 
+### Clientes
 - Criar cliente
-```POST /clientes```
+`POST /clientes`
 - Exemplo de JSON:
 ```{"nome": "George Silva", "email": "george.silva@email.com", "senha": "123456", "endereco": Rua das Palmeiras, 45", "cpf": "12345678900", "telefone": "31999998888"}```
 - Listar clientes
-```GET /clientes```
+`GET /clientes`
 - Buscar cliente por ID
-```GET /clientes/{id}```
+`GET /clientes/{id}`
 - Deletar cliente
-```DELETE /clientes/{id}```
+`DELETE /clientes/{id}`
+
+### Produtos
+- `GET /produtos`
+- `POST /produtos`
+- `GET /produtos/{id}`
+
+### Pedidos
+- `GET /pedidos`
+- `POST /pedidos`
+- `GET /pedidos/{id}`
 
 ---
 
@@ -77,5 +96,4 @@ com.example.loja
 ---
 
 ## 📄 Licença
-Este projeto não possui licença comercial.  
-Uso livre para fins educacionais.
+Este projeto não possui licença comercial. Uso livre para fins educacionais.

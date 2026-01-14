@@ -17,7 +17,7 @@ public class ProdutoService {
 
 	private final ProdutoRepository repository;
 
-	// Injeção via construtor (boa prática para imutabilidade e testes)
+	// Injeção via construtor
     public ProdutoService(ProdutoRepository repository) {
         this.repository = repository;
     }

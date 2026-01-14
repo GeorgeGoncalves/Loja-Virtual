@@ -24,6 +24,7 @@ public class ProdutoController {
 
 	private final ProdutoService service;
 
+	// Injeção via construtor
     public ProdutoController(ProdutoService service) {
         this.service = service;
     }
