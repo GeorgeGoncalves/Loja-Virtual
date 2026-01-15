@@ -3,52 +3,55 @@ package com.example.loja.dto;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import com.example.loja.entities.StatusPedido;
+
 public class PedidoDTO {
-	private Long id;
-    private ClienteDTO cliente;
-    private List<ProdutoDTO> produtos;
-    private LocalDateTime dataPedido;
-    private Double valorTotal;
-    private String status;
+	private Long Id;
+	private Long clienteId;
+	private List<Long> produtosIds;
+	private LocalDateTime dataPedido;
+	private Double valorTotal;
+	private StatusPedido status;
 
-    // Construtor vazio
-    public PedidoDTO() {
+	// Construtor vazio
+	public PedidoDTO() {
 	}
 
-    // Construtor
-	public PedidoDTO(Long id, ClienteDTO cliente, List<ProdutoDTO> produtos,
-                     LocalDateTime dataPedido, Double valorTotal, String status) {
-        this.id = id;
-        this.cliente = cliente;
-        this.produtos = produtos;
-        this.dataPedido = dataPedido;
-        this.valorTotal = valorTotal;
-        this.status = status;
-    }
+	// Construtor
+	public PedidoDTO(Long Id, Long clienteId, List<Long> produtosIds, LocalDateTime dataPedido, Double valorTotal,
+			StatusPedido status) {
+		this.Id = Id;
+		this.clienteId = clienteId;
+		this.produtosIds = produtosIds;
+		this.dataPedido = dataPedido;
+		this.valorTotal = valorTotal;
+		this.status = status;
 
-    // Getters e Setters
+	}
+
+	// Getters e Setters
 	public Long getId() {
-		return id;
+		return Id;
 	}
-	
+
 	public void setId(Long id) {
-		this.id = id;
+		Id = id;
 	}
 
-	public ClienteDTO getCliente() {
-		return cliente;
+	public Long getClienteId() {
+		return clienteId;
 	}
 
-	public void setCliente(ClienteDTO cliente) {
-		this.cliente = cliente;
+	public void setClienteId(Long clienteId) {
+		this.clienteId = clienteId;
 	}
 
-	public List<ProdutoDTO> getProdutos() {
-		return produtos;
+	public List<Long> getProdutosIds() {
+		return produtosIds;
 	}
 
-	public void setProdutos(List<ProdutoDTO> produtos) {
-		this.produtos = produtos;
+	public void setProdutosIds(List<Long> produtosIds) {
+		this.produtosIds = produtosIds;
 	}
 
 	public LocalDateTime getDataPedido() {
@@ -67,11 +70,11 @@ public class PedidoDTO {
 		this.valorTotal = valorTotal;
 	}
 
-	public String getStatus() {
+	public StatusPedido getStatus() {
 		return status;
 	}
 
-	public void setStatus(String status) {
+	public void setStatus(StatusPedido status) {
 		this.status = status;
 	}
 }
