@@ -1,8 +1,7 @@
 package com.example.loja.controller;
 
 import com.example.loja.dto.PedidoDTO;
-
-import com.example.loja.entities.Pedido;
+import com.example.loja.entity.Pedido;
 import com.example.loja.service.PedidoService;
 
 import org.modelmapper.ModelMapper;

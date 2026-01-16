@@ -1,4 +1,4 @@
-package com.example.loja.entities;
+package com.example.loja.entity;
 
 /**
  * Enum StatusPedido representa os estados possíveis de um pedido.

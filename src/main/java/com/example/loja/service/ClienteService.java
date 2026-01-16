@@ -2,7 +2,7 @@ package com.example.loja.service;
 
 import org.springframework.stereotype.Service;
 
-import com.example.loja.entities.Cliente;
+import com.example.loja.entity.Cliente;
 import com.example.loja.repository.ClienteRepository;
 
 import java.util.List;

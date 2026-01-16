@@ -3,7 +3,7 @@ package com.example.loja.dto;
 import java.time.LocalDateTime;
 import java.util.List;
 
-import com.example.loja.entities.StatusPedido;
+import com.example.loja.entity.StatusPedido;
 
 public class PedidoDTO {
 	private Long Id;

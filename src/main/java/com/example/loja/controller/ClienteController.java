@@ -6,7 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import com.example.loja.dto.ClienteDTO;
-import com.example.loja.entities.Cliente;
+import com.example.loja.entity.Cliente;
 import com.example.loja.service.ClienteService;
 
 @RestController

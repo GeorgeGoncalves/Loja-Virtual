@@ -7,10 +7,10 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.example.loja.entities.Cliente;
-import com.example.loja.entities.Pedido;
-import com.example.loja.entities.Produto;
-import com.example.loja.entities.StatusPedido;
+import com.example.loja.entity.Cliente;
+import com.example.loja.entity.Pedido;
+import com.example.loja.entity.Produto;
+import com.example.loja.entity.StatusPedido;
 import com.example.loja.repository.ClienteRepository;
 import com.example.loja.repository.PedidoRepository;
 import com.example.loja.repository.ProdutoRepository;

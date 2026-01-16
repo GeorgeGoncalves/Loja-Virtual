@@ -1,10 +1,10 @@
 package com.example.loja.service;
 
 import com.example.loja.dto.PedidoDTO;
-import com.example.loja.entities.Cliente;
-import com.example.loja.entities.Pedido;
-import com.example.loja.entities.Produto;
-import com.example.loja.entities.StatusPedido;
+import com.example.loja.entity.Cliente;
+import com.example.loja.entity.Pedido;
+import com.example.loja.entity.Produto;
+import com.example.loja.entity.StatusPedido;
 import com.example.loja.repository.ClienteRepository;
 import com.example.loja.repository.PedidoRepository;
 import com.example.loja.repository.ProdutoRepository;

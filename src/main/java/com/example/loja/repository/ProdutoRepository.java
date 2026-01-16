@@ -2,7 +2,7 @@ package com.example.loja.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.example.loja.entities.Produto;
+import com.example.loja.entity.Produto;
 
 /**
  * Repository JPA para Produto.

@@ -1,7 +1,8 @@
 package com.example.loja.repository;
 
-import com.example.loja.entities.Pedido;
 import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.example.loja.entity.Pedido;
 
 /**
  * Repository JPA para Pedido.

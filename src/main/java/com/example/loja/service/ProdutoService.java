@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.example.loja.entities.Produto;
+import com.example.loja.entity.Produto;
 import com.example.loja.repository.ProdutoRepository;
 
 /**

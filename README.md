@@ -11,10 +11,12 @@ O objetivo é criar uma API REST para gerenciar clientes, produtos e pedidos, se
 ## ⚙️ Tecnologias utilizadas
 - Java 17+
 - Spring Boot
+- Spring Web
 - Spring Data JPA
 - H2 Database (para testes)
 - Maven
 - Postman/Insomnia (para testes de API)
+- Spring Security
 
 ---
 
@@ -22,12 +24,37 @@ O objetivo é criar uma API REST para gerenciar clientes, produtos e pedidos, se
 
 ```
 │
-├── dto             #
-├── controller      # Endpoints REST (ClienteController, ProdutoController...)
-├── service         # Lógica de negócio (ClienteService, ProdutoService...)
-├── repository      # Interfaces JPA (ClienteRepository, ProdutoRepository...)
-├── entities        # Entidades JPA (@Entity) -> Cliente, Produto, Pedido
-└── seed           # Valores iniciais para teste
+├── config                  # Configurações globais do projeto
+│   ├── ModelMapperConfig.java   # Bean para conversão entre entidades e DTOs
+│   └── SecurityConfig.java      # Configuração do Spring Security (autenticação/autorização)
+│
+├── controller              # Camada de apresentação (endpoints REST)
+│   ├── ClienteController.java   # Endpoints relacionados a Cliente
+│   ├── PedidoController.java    # Endpoints relacionados a Pedido
+│   └── ProdutoController.java   # Endpoints relacionados a Produto
+│
+├── dto                     # Objetos de transferência de dados (DTOs)
+│   ├── ClienteDTO.java
+│   ├── PedidoDTO.java
+│   └── ProdutoDTO.java
+│
+├── entity                  # Classe que representa uma tabela no banco de dados.
+│   ├── Cliente.java             # Entidade JPA Cliente
+│   ├── Pedido.java              # Entidade JPA Pedido
+│   └── Produto.java             # Entidade JPA Produto
+│
+├── repository              # Interfaces JPA (camada de persistência)
+│   ├── ClienteRepository.java
+│   ├── PedidoRepository.java
+│   └── ProdutoRepository.java
+│
+├── seed                    # Dados iniciais para popular o banco (fixtures)
+│   └── SeedData.java
+│
+└── service                 # Camada de negócio (regras e lógica)
+    ├── ClienteService.java
+    ├── PedidoService.java
+    └── ProdutoService.java
 ```
 
 ---
@@ -58,6 +85,18 @@ mvn spring-boot:run
 ```
 http://localhost:8080
 ```
+
+---
+
+🔒 Segurança
+O projeto utiliza Spring Security com autenticação Basic Auth:
+- Usuário `george/1234` → ROLE_USER
+- Usuário `admin/admin` → ROLE_ADMIN
+
+Regras de acesso
+- `/pedidos/**` → acessível apenas para ROLE_USER
+- `/clientes/**` → acessível apenas para ROLE_ADMIN
+- Demais endpoints → requerem autenticação
 
 ---
 
